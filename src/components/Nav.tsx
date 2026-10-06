@@ -50,20 +50,20 @@ export function Nav() {
   const [open, setOpen] = useState(false)
 
   const linkClass = (id: string) =>
-    `underline-offset-[7px] decoration-coral decoration-wavy decoration-[1.5px] hover:underline ${
-      active === id ? 'underline' : ''
+    `border-b-2 pb-1 transition-colors hover:text-ink ${
+      active === id ? 'border-accent text-ink' : 'border-transparent text-muted'
     }`
 
   return (
-    <nav className="sticky top-0 z-20 bg-bg/90 backdrop-blur-md">
+    <nav className="sticky top-0 z-20 border-b border-line bg-bg/90 backdrop-blur-md">
       <div className="wrap flex h-16 items-center justify-between">
-        <a href="#top" className="flex items-center gap-1.5 text-xl font-bold">
+        <a href="#top" className="flex items-center gap-2.5 font-display text-[1.05rem] font-bold uppercase tracking-[.22em]">
+          <span className="h-5 w-1.5 bg-accent" />
           {profile.name}
-          <span className="size-2 rounded-full bg-coral" />
         </a>
 
         <div className="flex items-center gap-2 sm:gap-6">
-          <ul className="hidden gap-[clamp(14px,3vw,34px)] text-[.92rem] font-semibold md:flex">
+          <ul className="hidden gap-[clamp(14px,3vw,34px)] font-display text-[.78rem] font-bold uppercase tracking-[.18em] md:flex">
             {navLinks.map((l) => (
               <li key={l.id}>
                 <a href={`#${l.id}`} className={linkClass(l.id)}>
@@ -77,7 +77,7 @@ export function Nav() {
             type="button"
             onClick={toggle}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
-            className="grid size-9 cursor-pointer place-items-center rounded-full border border-line bg-card transition-transform hover:-rotate-12"
+            className="grid size-9 cursor-pointer place-items-center rounded-full border border-line bg-card transition-colors hover:border-ink"
           >
             {theme === 'dark' ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </button>
@@ -95,10 +95,10 @@ export function Nav() {
       </div>
 
       {open && (
-        <ul className="wrap flex flex-col gap-1 border-t border-line pb-4 pt-2 font-semibold md:hidden">
+        <ul className="wrap flex flex-col items-start gap-1 border-t border-line pb-4 pt-2 font-display text-[.82rem] font-bold uppercase tracking-[.18em] md:hidden">
           {navLinks.map((l) => (
             <li key={l.id}>
-              <a href={`#${l.id}`} onClick={() => setOpen(false)} className={`block py-2 ${linkClass(l.id)}`}>
+              <a href={`#${l.id}`} onClick={() => setOpen(false)} className={`mt-2 block ${linkClass(l.id)}`}>
                 {l.label}
               </a>
             </li>

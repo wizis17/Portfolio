@@ -2,121 +2,65 @@
 
 /* Palette: light values first, dark values redefine the same tokens. */
 :root {
-  --bg: #fbf7f2;
+  --bg: #ffffff;
   --card: #ffffff;
-  --ink: #141414;
-  --muted: #55555f;
-  --line: #ece6de;
-  --brand: #1e3fd8;
-  --coral: #f0533f;
-  --lime: #a6d84a;
-  --lime-deep: #6e9f1f;
-  --sun: #f7c948;
-  --sun-deep: #b8860b;
-  --lav: #cfcbf5;
-  --lime-soft: #eef6df;
-  --lav-soft: #eceafb;
-  --sun-soft: #fdf2cf;
-  --pink-soft: #fce6eb;
-  --btn: #141414;
+  --soft: #f7f5f1;
+  --ink: #4a4a4a;
+  --muted: #6f6f6f;
+  --line: #e6e3de;
+  --accent: #f4b860;
+  --accent-ink: #a06400;
+  --btn: #4a4a4a;
   --btn-ink: #ffffff;
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #14151d;
-    --card: #1e2030;
-    --ink: #f2efea;
-    --muted: #a9a8b6;
-    --line: #2c2e40;
-    --brand: #8094ff;
-    --coral: #ff7462;
-    --lime: #b6e35e;
-    --lime-deep: #b6e35e;
-    --sun: #f7c948;
-    --sun-deep: #f7c948;
-    --lav: #4b4688;
-    --lime-soft: #1f2a1a;
-    --lav-soft: #232442;
-    --sun-soft: #2e2817;
-    --pink-soft: #2e1e27;
-    --btn: #f2efea;
-    --btn-ink: #14151d;
+    --bg: #1f1f21;
+    --card: #2e2e32;
+    --soft: #262628;
+    --ink: #ededed;
+    --muted: #a8a8ad;
+    --line: #3a3a3e;
+    --accent: #f4b860;
+    --accent-ink: #f4b860;
+    --btn: #ededed;
+    --btn-ink: #1f1f21;
     color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #14151d;
-  --card: #1e2030;
-  --ink: #f2efea;
-  --muted: #a9a8b6;
-  --line: #2c2e40;
-  --brand: #8094ff;
-  --coral: #ff7462;
-  --lime: #b6e35e;
-  --lime-deep: #b6e35e;
-  --sun: #f7c948;
-  --sun-deep: #f7c948;
-  --lav: #4b4688;
-  --lime-soft: #1f2a1a;
-  --lav-soft: #232442;
-  --sun-soft: #2e2817;
-  --pink-soft: #2e1e27;
-  --btn: #f2efea;
-  --btn-ink: #14151d;
+  --bg: #1f1f21;
+  --card: #2e2e32;
+  --soft: #262628;
+  --ink: #ededed;
+  --muted: #a8a8ad;
+  --line: #3a3a3e;
+  --accent: #f4b860;
+  --accent-ink: #f4b860;
+  --btn: #ededed;
+  --btn-ink: #1f1f21;
   color-scheme: dark;
 }
 
 @theme inline {
   --color-bg: var(--bg);
   --color-card: var(--card);
+  --color-soft: var(--soft);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-line: var(--line);
-  --color-brand: var(--brand);
-  --color-coral: var(--coral);
-  --color-lime: var(--lime);
-  --color-lime-deep: var(--lime-deep);
-  --color-sun: var(--sun);
-  --color-sun-deep: var(--sun-deep);
-  --color-lav: var(--lav);
-  --color-lime-soft: var(--lime-soft);
-  --color-lav-soft: var(--lav-soft);
-  --color-sun-soft: var(--sun-soft);
-  --color-pink-soft: var(--pink-soft);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
   --color-btn: var(--btn);
   --color-btn-ink: var(--btn-ink);
 }
 
 @theme {
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-sans: "Outfit", "Helvetica Neue", Arial, sans-serif;
-  --font-hand: "Caveat", "Comic Sans MS", cursive;
-
-  --animate-pop: pop 0.55s 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.4) both;
-  --animate-wave: wave 2.4s ease-in-out 1s 2;
-
-  @keyframes pop {
-    0% {
-      transform: scale(0.6) rotate(-14deg);
-      opacity: 0;
-    }
-    100% {
-      transform: rotate(-6deg);
-      opacity: 1;
-    }
-  }
-  @keyframes wave {
-    0%,
-    100% {
-      transform: rotate(0);
-    }
-    50% {
-      transform: rotate(14deg);
-    }
-  }
+  --font-display: "Quicksand", "Zen Maru Gothic", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Zen Maru Gothic", "Quicksand", "Helvetica Neue", Arial, sans-serif;
 }
 
 @utility wrap {
@@ -124,11 +68,6 @@
   max-width: 1140px;
   margin-inline: auto;
   padding-inline: clamp(18px, 4vw, 40px);
-}
-
-/* Fraunces' soft, rounded axis */
-@utility font-soft {
-  font-variation-settings: "SOFT" 100;
 }
 
 @layer base {
@@ -145,7 +84,8 @@
     background: var(--bg);
     color: var(--ink);
     font-family: var(--font-sans);
-    line-height: 1.6;
+    line-height: 1.75;
+    letter-spacing: 0.02em;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
@@ -156,7 +96,7 @@
   }
   a:focus-visible,
   button:focus-visible {
-    outline: 2px solid var(--brand);
+    outline: 2px solid var(--accent-ink);
     outline-offset: 3px;
     border-radius: 6px;
   }

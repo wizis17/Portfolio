@@ -1,15 +1,5 @@
 // All page content lives here — edit this file to update the site.
 
-export type Tone = 'lime' | 'coral' | 'brand' | 'sun'
-
-// Full class names so Tailwind can see them.
-export const tones: Record<Tone, { soft: string; dot: string; text: string }> = {
-  lime: { soft: 'bg-lime-soft', dot: 'bg-lime', text: 'text-lime-deep' },
-  coral: { soft: 'bg-pink-soft', dot: 'bg-coral', text: 'text-coral' },
-  brand: { soft: 'bg-lav-soft', dot: 'bg-brand', text: 'text-brand' },
-  sun: { soft: 'bg-sun-soft', dot: 'bg-sun', text: 'text-sun-deep' },
-}
-
 export const profile = {
   name: 'Tenji',
   role: 'Tech Lead',
@@ -69,7 +59,6 @@ export const projects: {
   text: string
   link: string
   href: string
-  tone: Tone
 }[] = [
   {
     title: 'HR Platform',
@@ -77,7 +66,6 @@ export const projects: {
     text: 'Recruitment, staff records and attendance for 8 branches, in Khmer and English.',
     link: 'View case study',
     href: '#',
-    tone: 'lime',
   },
   {
     title: 'Payroll Module',
@@ -85,7 +73,6 @@ export const projects: {
     text: 'Position-based allowances and a dynamic daily rate, run for every branch from one place.',
     link: 'View case study',
     href: '#',
-    tone: 'coral',
   },
   {
     title: 'Team Messenger',
@@ -93,7 +80,6 @@ export const projects: {
     text: 'Self-hosted company chat on Socket.IO, with files stored on servers the company owns.',
     link: 'View case study',
     href: '#',
-    tone: 'brand',
   },
   {
     title: 'Group ERP',
@@ -101,7 +87,6 @@ export const projects: {
     text: 'Growing the HR and inventory services into one system for the whole group.',
     link: 'Follow along',
     href: '#',
-    tone: 'sun',
   },
 ]
 
