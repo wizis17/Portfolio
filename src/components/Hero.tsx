@@ -39,15 +39,15 @@ export function Hero() {
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-3.5">
-          <a className={btn} href="#contact">
+          <a className={`${btn} max-sm:w-full max-sm:justify-center`} href="#contact">
             Let's work together <ArrowUpRight className="size-4" />
           </a>
-          <a className={btnGhost} href={profile.cvUrl}>
+          <a className={`${btnGhost} max-sm:w-full max-sm:justify-center`} href={profile.cvUrl} download="Tang_KavTheng_Software_Developer_Resume.pdf">
             Download CV <Download className="size-4" />
           </a>
         </div>
 
-        <ul className="mt-9 grid gap-x-8 gap-y-2 border-t border-accent pt-5 text-[.88rem] text-muted sm:grid-cols-2">
+        <ul className="mt-9 grid gap-x-8 gap-y-2 border-t border-accent pt-5 text-[.88rem] text-muted sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2">
           {details.map(({ icon: Icon, text }) => (
             <li key={text} className="flex items-center gap-2.5">
               <Icon className="size-[15px] flex-none text-ink" />
@@ -57,7 +57,8 @@ export function Hero() {
         </ul>
       </div>
 
-      <div className="mx-auto w-full max-w-[460px]">
+      {/* on phones the profile photo leads; side by side from md up */}
+      <div className="order-first mx-auto w-full max-w-[280px] md:order-none md:max-w-[460px]">
         <div className="mb-5 flex justify-end">
           <span className="inline-flex overflow-hidden rounded-full border-2 border-btn font-display text-[.78rem] font-bold uppercase tracking-[.2em]">
             <span className="bg-btn px-4 py-1 text-btn-ink">{profile.edition}</span>

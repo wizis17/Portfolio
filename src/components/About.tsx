@@ -15,12 +15,13 @@ export function About() {
   return (
     <section id="about" className="wrap pt-[clamp(80px,10vw,120px)]">
       <SectionHead name="About" title="About me" />
-      <div className="mt-8 grid items-start gap-[clamp(24px,5vw,72px)] md:grid-cols-[1.4fr_1fr]">
+      <div className="mt-8 grid items-start gap-[clamp(24px,5vw,72px)] lg:grid-cols-[1.3fr_1fr]">
         <p className="max-w-[34em] text-[1.05rem]">{profile.about}</p>
         <div>
           <p className={kicker}>Motto</p>
-          <p className="mt-2 border-b border-accent pb-4 font-display text-[clamp(1.3rem,2.4vw,1.7rem)] font-medium tracking-[.14em]">
-            「 {profile.motto.join(' ')} 」
+          <p className="mt-2 border-b border-accent pb-4 font-display text-[clamp(1.2rem,1.9vw,1.5rem)] font-medium tracking-[.1em] lg:whitespace-nowrap">
+            {/* non-breaking spaces keep the brackets attached to the words */}
+            「{' '}{profile.motto.join(' ')}{' '}」
           </p>
         </div>
       </div>

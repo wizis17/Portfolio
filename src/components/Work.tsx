@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { ArrowRight } from 'lucide-react'
-import { projects } from '../data'
+import { profile, projects } from '../data'
 import { card } from './About'
 import { btnGhost } from './Hero'
 import { SectionHead } from './SectionHead'
@@ -39,7 +39,7 @@ const layouts: ReactNode[] = [
 
 function Thumb({ index }: { index: number }) {
   return (
-    <svg viewBox="0 0 220 130" aria-hidden="true" className="block h-auto w-full text-accent transition-transform duration-300 group-hover:-translate-y-1.5">
+    <svg viewBox="0 0 220 130" aria-hidden="true" className="block h-auto w-[88%] text-accent sm:w-full transition-transform duration-300 group-hover:-translate-y-1.5">
       <rect width="220" height="140" rx="10" className="fill-card" />
       <rect width="220" height="16" rx="10" className="fill-line" />
       <circle cx="10" cy="8" r="2.5" className="fill-muted" />
@@ -66,14 +66,18 @@ export function Work() {
       <div className="mt-8 grid gap-[18px] sm:grid-cols-2 lg:grid-cols-4">
         {projects.map((p, i) => (
           <article key={p.title} className={`group flex flex-col overflow-hidden ${card}`}>
-            <div className="grid aspect-[4/3] place-items-end overflow-hidden bg-soft px-[18px] pt-[18px]">
+            <div className="grid aspect-[16/9] items-end justify-items-center overflow-hidden bg-soft px-[18px] pt-[18px] sm:aspect-[4/3]">
               <Thumb index={i} />
             </div>
             <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
               <div className="font-display text-[.72rem] font-bold uppercase tracking-[.18em] text-accent-ink">{p.category}</div>
               <h3 className="mb-2 mt-1 font-bold tracking-[.06em]">{p.title}</h3>
               <p className="mb-4 flex-1 text-[.88rem] text-muted">{p.text}</p>
-              <a href={p.href} className="inline-flex items-center gap-1.5 text-[.85rem] font-bold">
+              <a
+                href={p.href}
+                {...(p.href.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}
+                className="inline-flex items-center gap-1.5 text-[.85rem] font-bold"
+              >
                 {p.link} <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
@@ -82,7 +86,7 @@ export function Work() {
       </div>
 
       <div className="mt-9 flex justify-center">
-        <a className={btnGhost} href="#">
+        <a className={btnGhost} href={`https://${profile.github}?tab=repositories`} target="_blank" rel="noopener noreferrer">
           See all projects <ArrowRight className="size-4" />
         </a>
       </div>

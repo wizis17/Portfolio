@@ -77,7 +77,7 @@ export function Nav() {
             type="button"
             onClick={toggle}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
-            className="grid size-9 cursor-pointer place-items-center rounded-full border border-line bg-card transition-colors hover:border-ink"
+            className="grid size-11 cursor-pointer place-items-center rounded-full border border-line bg-card transition-colors hover:border-ink md:size-9"
           >
             {theme === 'dark' ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </button>
@@ -87,7 +87,7 @@ export function Nav() {
             onClick={() => setOpen(!open)}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
-            className="grid size-9 cursor-pointer place-items-center rounded-full border border-line bg-card md:hidden"
+            className="grid size-11 cursor-pointer place-items-center rounded-full border border-line bg-card md:hidden"
           >
             {open ? <X className="size-4" /> : <Menu className="size-4" />}
           </button>
@@ -95,11 +95,11 @@ export function Nav() {
       </div>
 
       {open && (
-        <ul className="wrap flex flex-col items-start gap-1 border-t border-line pb-4 pt-2 font-display text-[.82rem] font-bold uppercase tracking-[.18em] md:hidden">
+        <ul className="wrap flex flex-col border-t border-line pb-3 pt-1 font-display text-[.85rem] font-bold uppercase tracking-[.18em] md:hidden">
           {navLinks.map((l) => (
             <li key={l.id}>
-              <a href={`#${l.id}`} onClick={() => setOpen(false)} className={`mt-2 block ${linkClass(l.id)}`}>
-                {l.label}
+              <a href={`#${l.id}`} onClick={() => setOpen(false)} className="block py-1.5">
+                <span className={linkClass(l.id)}>{l.label}</span>
               </a>
             </li>
           ))}

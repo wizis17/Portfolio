@@ -3,6 +3,7 @@ import { ArrowRight, Check, Copy } from 'lucide-react'
 import { profile } from '../data'
 import { btn } from './Hero'
 import { heading, label } from './SectionHead'
+import { SocialIcon } from './SocialIcons'
 
 export function Contact() {
   const [copied, setCopied] = useState(false)
@@ -49,9 +50,11 @@ export function Contact() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="grid size-9 place-items-center rounded-[10px] bg-btn font-display text-[.78rem] font-bold text-btn-ink transition-opacity hover:opacity-85"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="grid size-11 place-items-center rounded-[10px] bg-btn text-btn-ink transition-opacity hover:opacity-85 sm:size-9"
                 >
-                  {s.short}
+                  <SocialIcon name={s.icon} className="size-[18px]" />
                 </a>
               ))}
             </div>
@@ -59,7 +62,7 @@ export function Contact() {
         </div>
       </div>
 
-      <footer className="px-4 py-7 text-center text-[.78rem] tracking-[.12em] text-muted">
+      <footer className="px-4 pb-[max(28px,env(safe-area-inset-bottom))] pt-7 text-center text-[.78rem] tracking-[.12em] text-muted">
         © {profile.edition} {profile.name} · Made with care in {profile.location}
       </footer>
     </>

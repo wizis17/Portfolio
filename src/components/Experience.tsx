@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react'
-import { experience, sideQuests, skills } from '../data'
+import { certificates, experience, skills, volunteer } from '../data'
 import { SectionHead, kicker } from './SectionHead'
 
-function Column({ title, children }: { title: string; children: ReactNode }) {
+function Column({ title, className = '', children }: { title: string; className?: string; children: ReactNode }) {
   return (
-    <div className="border-t border-accent pt-5">
+    <div className={`border-t border-accent pt-5 ${className}`}>
       <h3 className={`mb-5 ${kicker}`}>{title}</h3>
       {children}
     </div>
@@ -29,14 +29,17 @@ export function Experience() {
   return (
     <section id="experience" className="wrap pt-[clamp(64px,9vw,112px)]">
       <SectionHead name="Experience" title="Background" />
-      <div className="mt-8 grid gap-x-[clamp(24px,4vw,48px)] gap-y-10 lg:grid-cols-3">
+      <div className="mt-8 grid gap-x-[clamp(24px,4vw,48px)] gap-y-10 md:grid-cols-2 lg:grid-cols-3">
         <Column title="Experience">
           <Timeline items={experience} />
         </Column>
-        <Column title="Side Quests">
-          <Timeline items={sideQuests} />
+        <Column title="Certificates">
+          <Timeline items={certificates} />
         </Column>
-        <Column title="Skills">
+        <Column title="Volunteer">
+          <Timeline items={volunteer} />
+        </Column>
+        <Column title="Skills" className="col-span-full">
           <div className="flex flex-wrap gap-2">
             {skills.map((s) => (
               <span key={s} className="rounded-full border border-line px-3.5 py-1 text-[.82rem] font-medium">

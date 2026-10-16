@@ -1,25 +1,26 @@
 // All page content lives here — edit this file to update the site.
+import cvFile from '../Public/image/Tang_KavTheng_Software_Developer_Resume.pdf'
 
 export const profile = {
-  name: 'Tenji',
-  role: 'Tech Lead',
+  name: 'THENG',
+  role: 'DEV',
   title: 'Full-Stack Developer',
   edition: '2026',
   tagline:
     'I build the internal systems a busy restaurant group runs on — fast, reliable, and easy for staff to use.',
   about:
-    "I'm a full-stack developer and technical lead on a five-person IT team. I turn messy day-to-day operations — hiring, payroll, team chat — into clean web systems, then deploy and keep them running myself.",
-  motto: ['Code.', 'Ship.', 'Serve.'],
-  location: 'Cambodia',
-  email: 'you@example.com',
-  site: 'yourname.dev',
-  github: 'github.com/your-handle',
-  cvUrl: '#',
+    "I'm an IT Engineering student specializing in Software Engineering at the Royal University of Phnom Penh. My journey in programming began with an interest in solving complex problems, leading me to explore various programming languages and technologies.",
+  motto: ['Learn.', 'Build.', 'Repeat.'],
+  location: 'Phnom Penh, Cambodia',
+  email: 'tangkavtheng@gmail.com',
+  site: 'personal-portfolio.th-eng.tech',
+  github: 'github.com/wizis17',
+  cvUrl: cvFile,
   socials: [
-    { label: 'LinkedIn', short: 'in', href: '#' },
-    { label: 'GitHub', short: 'gh', href: '#' },
-    { label: 'Telegram', short: 'tg', href: '#' },
-  ],
+    { label: 'LinkedIn', icon: 'linkedin', href: 'https://www.linkedin.com/in/tang-kavtheng-3a6b30362/' },
+    { label: 'GitHub', icon: 'github', href: 'https://github.com/wizis17' },
+    { label: 'Telegram', icon: 'telegram', href: 'https://t.me/xiaochen_17' },
+  ] as const,
 }
 
 export const navLinks = [
@@ -60,47 +61,53 @@ export const projects: {
   link: string
   href: string
 }[] = [
+  // Thumbnails follow list order: list view, product card, chat, dashboard chart.
   {
     title: 'HR Platform',
     category: 'People ops',
-    text: 'Recruitment, staff records and attendance for 8 branches, in Khmer and English.',
-    link: 'View case study',
-    href: '#',
+    text: 'Staff records, recruitment and attendance managed in one place.',
+    link: 'View on GitHub',
+    href: 'https://github.com/wizis17',
   },
   {
-    title: 'Payroll Module',
-    category: 'Finance',
-    text: 'Position-based allowances and a dynamic daily rate, run for every branch from one place.',
-    link: 'View case study',
-    href: '#',
+    title: 'E-commerce Website',
+    category: 'Online store',
+    text: 'Product catalog, shopping cart and checkout for an online shop.',
+    link: 'View on GitHub',
+    href: 'https://github.com/wizis17',
   },
   {
-    title: 'Team Messenger',
-    category: 'Real-time',
-    text: 'Self-hosted company chat on Socket.IO, with files stored on servers the company owns.',
-    link: 'View case study',
-    href: '#',
+    title: 'AI Automation',
+    category: 'AI',
+    text: 'Workflows that use AI to handle repetitive tasks automatically.',
+    link: 'View on GitHub',
+    href: 'https://github.com/wizis17',
   },
   {
-    title: 'Group ERP',
-    category: 'In progress',
-    text: 'Growing the HR and inventory services into one system for the whole group.',
-    link: 'Follow along',
-    href: '#',
+    title: 'School Management System',
+    category: 'Education',
+    text: 'Students, classes, attendance and grades for a school, in one dashboard.',
+    link: 'View on GitHub',
+    href: 'https://github.com/wizis17',
   },
 ]
 
 export const experience = [
-  { title: 'Technical Lead — Internal Platforms', text: 'Restaurant & hospitality group' },
-  { title: 'Shipped the HR platform', text: '8 branches, recruitment to payroll' },
-  { title: 'Shipped the team messenger', text: 'Self-hosted on DigitalOcean' },
-  { title: 'Now', text: 'Building the group ERP' },
+  { title: 'Software Developer Intern', text: 'July 2026 – Present' },
+  { title: 'IT Engineering Student', text: 'Royal University of Phnom Penh — Software Engineering' },
 ]
 
-export const sideQuests = [
-  { title: 'Gloss', text: 'A browser reading app that glosses foreign-language texts line by line' },
-  { title: 'Linux & DevOps deep dives', text: "Command-line fundamentals from a developer's angle" },
-  { title: 'Creative web experiments', text: 'Small builds to try new ideas' },
+export const certificates = [
+  { title: 'Python Programming', text: 'IT Center · 2024' },
+  { title: 'C & C++ Programming', text: 'Addbook · 2024' },
+  { title: 'ASEAN Data Science Explorers', text: 'ASEAN Foundation · 2025' },
+]
+
+export const volunteer = [
+  { title: 'Cambodia Robotics Olympiad', text: 'STEM · 2025' },
+  { title: 'EU-Manpower', text: 'Team2 · 2025' },
+  { title: 'CAMSTEMFEST', text: 'STEM · 2026' },
+  { title: 'ICIA', text: 'STEM · 2026' },
 ]
 
 export const skills = [
